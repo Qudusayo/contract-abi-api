@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const solc = require("solc");
 const fs = require("fs");
@@ -40,6 +41,6 @@ app.get("/", (_, res) => {
   }
 });
 
-app.listen(4500, () => {
-  console.log("Example app listening on port 4500!");
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}!`);
 });
